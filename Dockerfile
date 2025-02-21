@@ -44,5 +44,5 @@ RUN wget -O /app/grandqc/models/qc/GrandQC_MPP1.pth https://zenodo.org/records/1
 # Symlink models into the respective subdirectories
 RUN mkdir -p /app/grandqc/01_WSI_inference_OPENSLIDE_QC/models \
     /app/grandqc/02_WSI_inference_OME_TIFF_QC/models \
-    && ln -s /app/grandqc/models /app/grandqc/01_WSI_inference_OPENSLIDE_QC/models \
-    && ln -s /app/grandqc/models /app/grandqc/02_WSI_inference_OME_TIFF_QC/models
+    && ln -sf /app/grandqc/models/* /app/grandqc/01_WSI_inference_OPENSLIDE_QC/models/ \
+    && ln -sf /app/grandqc/models/* /app/grandqc/02_WSI_inference_OME_TIFF_QC/models/
